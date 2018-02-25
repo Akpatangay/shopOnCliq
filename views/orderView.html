@@ -1,0 +1,84 @@
+<login-directive></login-directive>
+<main-nav ng-if="loggedIn"></main-nav>
+<div class="container jumbotron bill" ng-if="loggedIn">
+    <div class="row">
+        <p id="ord">shopOnCliq</p>
+        <p id="memo"><u>Tax Invoice/Cash Memo</u></p>
+        <p style="font-size: 90% !important; text-align: center;">Date: {{order.orderDetails.orderDate | date : 'medium'}}</p>
+        <br/>
+        <br/>
+        <div style="text-align: center; font-size: 115%;"><u><b>Order Details</b></u>
+            <br/>
+            <br/>
+            <p class="place">Customer Id - {{order.userInfo.customerId}}</p>
+            <p class="place">Order ID - {{order.orderDetails.orderId}}</p>
+            <p class="place">Date of delivery - {{order.orderDetails.deliveryDate | date : 'medium'}}</p>
+            <p class="place">Mode of payment - {{order.orderDetails.paymentType}}</p>
+        </div>
+        <br/>
+        <div class="container">
+            <div class="col-xs-12 col-sm-12 col-md-9"><u><b>Billing Address</b></u>
+                <br/>
+                <br/>
+                <p class="left">{{order.userInfo.firstName}} {{order.userInfo.lastName}}</p>
+                <p class="left">{{order.userInfo.address}}</p>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-3"><u><b>Shipping Address</b></u>
+                <br/>
+                <br/>
+                <p class="left">{{order.userInfo.firstName}} {{order.userInfo.lastName}}</p>
+                <p class="left">{{order.orderDetails.delAddress}}</p>
+                <br/>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <div class="container">
+            <p style="text-align: center; font-size: 115%;"><u><b>Products Ordered</b></u></p>
+            <br/>
+            <div class="table-responsive" style="overflow-x:auto;">
+                <table class="table table-bordered tab">
+                    <thead>
+                        <tr>
+                            <th>Qty</th>
+                            <th>Product ID</th>
+                            <th>Product Name</th>
+                            <th>Product Price</th>
+                            <th>Total Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data to be loaded when order is placed from cart -->
+                        <tr ng-repeat="prod in order.orderDetails.orderDetails" ng-if="!order.productData">
+                            <td>{{prod.quantity}}</td>
+                            <td>{{prod.productInfo.productId}}</td>
+                            <td>{{prod.productInfo.productName}}</td>
+                            <td>{{prod.productInfo.productPrice | currency : '&#x20B9;'}}</td>
+                            <td>{{prod.totalPrice | currency : '&#x20B9;'}}</td>
+                        </tr>
+                        <!-- Data to be loaded when order is placed directly -->
+                        <tr ng-if="order.productData">
+                            <td>{{order.productData.quantity}}</td>
+                            <td>{{order.productData.productInfo.productId}}</td>
+                            <td>{{order.productData.productInfo.productName}}</td>
+                            <td>{{order.productData.productInfo.productPrice | currency : '&#x20B9;'}}</td>
+                            <td>{{order.productData.totalPrice | currency : '&#x20B9;'}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="font-weight: bold; text-align: center; font-size: 95% !important;">Total Price - {{order.orderDetails.orderPrice | currency : '&#x20B9;'}}</p>
+            <br/>
+            <br/>
+            <p class="end">Thank you for shopping with us.</p>
+            <br/>
+            <br/>
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                <a ng-href="#!/myCart" type="button" style="width: 100%; margin-left: 0 !important; margin-bottom: 10%;" class="btn btn-default button sub">Cart</a>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                <a ng-href="#!/" type="button" style="width: 100%; margin-left: 0 !important; margin-bottom: 10%;" class="btn btn-default sub button">Home</a>
+            </div>
+        </div>
+    </div>
+</div>

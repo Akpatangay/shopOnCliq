@@ -1,0 +1,31 @@
+<div class="container-fluid" style="margin-bottom: 0 !important">
+    <nav class="navbar navbar-inverse fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header navbar-inverse fixed-top">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand tit" href="#!/">shopOnCliq</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- displays user details when user logs in -->
+                    <li class="dropdown" ng-if="$root.loggedIn"><a style="font-size: 120%" class="dropdown-toggle" data-toggle="dropdown"> Hello! {{user.allDetails.firstName | capitalize}} <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class="inp"><a href="#!/details"> Your Account </a></li>
+                            <li class="inp"><a ng-click="user.userLogOut()"> Logout </a></li>
+                        </ul>
+                    </li>
+                    <!-- Cart total button -->
+                    <li ng-if="$root.loggedIn"><a href="#!/myCart"><span class="glyphicon glyphicon-shopping-cart" style="font-size: 160%;"><small>({{user.cartTotal}})</small></span></a></li>
+                    <!-- Sign up Button -->
+                    <li ng-if="!$root.loggedIn"><a href="#!/signUpForm"><span class="glyphicon glyphicon-user" style="display: inline;"></span>SignUp</a></li>
+                    <!-- Login button -->
+                    <li ng-if="!$root.loggedIn"><a href="#!/loginForm"><span class="glyphicon glyphicon-log-in" style="display: inline;"></span>Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>

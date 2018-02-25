@@ -1,0 +1,361 @@
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    background-color: rgb(245, 67, 136) !important;
+}
+.tit {
+    color: rgb(245, 67, 136) !important;
+    font-size: 180%;
+    font-family: fantasy;
+}
+
+.red-text {
+    color: rgb(245, 67, 136);
+}
+
+span,
+i {
+    color: rgb(245, 67, 136);
+}
+
+a {
+    margin-right: 2%;
+    margin-left: 6%;
+}
+
+.details {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 160%;
+    font-family: fantasy;
+    color: rgb(245, 67, 136);
+    margin-top: 5%
+}
+
+.for {
+    width: 50%;
+    margin-left: 25%;
+    border-width: 5px;
+    border-style: inset;
+    padding: 5% !important;
+    padding-bottom: 10%;
+    margin-bottom: 10%;
+}
+
+.sub {
+    background-color: rgb(245, 67, 136);
+    font-weight: bolder;
+    font-size: 90%;
+    font-family: fantasy;
+}
+
+#sub {
+    width: 100%;
+}
+
+.lab {
+    margin-right: 3%;
+    font-family: fantasy;
+    font-size: 105%;
+}
+
+#fill {
+    font-family: fantasy;
+    font-size: 120%;
+    text-align: center;
+}
+
+#sign {
+    font-weight: bolder;
+    text-align: center;
+    font-size: 160%;
+    margin-top: 10%;
+    color: rgb(245, 67, 136);
+    font-family: fantasy;
+}
+
+.card {
+    box-shadow: -5px -5px 2px 1px grey;
+    border-left: 1px solid grey;
+    border-top: 1px solid grey;
+    margin-left: 6%;
+    margin-top: 4%;
+    width: 260px;
+}
+
+.card-title {
+    font-family: fantasy;
+    font-size: 125%;
+    font-weight: bold;
+}
+
+.card-text {
+    font-family: fantasy;
+    font-size: 115% !important;
+    text-align: center;
+}
+.card-txt {
+	font-family: fantasy;
+    font-size: 115% !important;
+    margin-left: 25%;
+}
+
+.cart-name {
+    font-size: 130%;
+    font-family: fantasy;
+    margin-left: 25%;
+}
+
+.navb {
+    padding: 1% !important;
+    margin-right: 2%;
+}
+
+.inp {
+    align-content: center !important;
+}
+
+.tad {
+    font-family: fantasy;
+    font-size: 125%;
+}
+
+.jum {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+small {
+    margin-top: 0;
+    padding-top: 0;
+    color: white !important;
+}
+
+#myform {
+    text-align: center;
+    padding: 1%;
+    border: 1px dotted #ccc;
+    margin-bottom: 5%;
+    margin-left: 1%;
+}
+
+.qty {
+    width: 40%;
+    height: 15%;
+    text-align: center;
+}
+
+input.qtyplus,
+input.qtyminus {
+    padding: 1%;
+    width: 15%;
+    height: 10%;
+    margin: 0;
+    text-align: center;
+}
+
+.clearfix {
+    overflow: auto;
+}
+
+.img {
+    float: left;
+}
+
+.box {
+    border: dotted;
+    margin-top: 2%;
+    margin-right: 3%;
+}
+
+.botx {
+    float: right;
+    background-color: rgb(245, 67, 136);
+    border: none;
+}
+
+.tab {
+    margin-right: 10%;
+}
+
+.place {
+    font-size: 90% !important;
+    text-align: center;
+}
+
+.left {
+    font-size: 90% !important;
+}
+
+.end {
+    font-weight: bolder;
+    text-align: center;
+    font-size: 160% !important;
+    font-family: fantasy;
+    color: rgb(245, 67, 136);
+}
+
+.bill {
+    border: solid;
+}
+
+.jum {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.imgc {
+    max-width: 60%;
+    height: 15%;
+    margin-right: 2%;
+    margin-left: 1%
+}
+#ord {
+	text-align: center; 
+	font-family: fantasy; 
+	color: rgb(245, 67, 136); 
+	font-size: 250%; 
+	font-weight: bold;
+}
+#memo {
+	text-align: center;
+	font-size: 130%;
+}
+@media screen and (max-width : 450px){
+	.card {
+		margin-left: 18% !important;
+	}
+	.car {
+		text-align: center !important;
+	}
+	.card {
+        margin-left: 10%;
+        width: 220px;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+	#ord {
+		font-size: 160%; 
+	}
+	#memo {
+		font-size: 120%;
+	}
+    .card {
+        /*border: solid !important; */
+        margin-left: 5%;
+
+    }
+    .card-title {
+        font-size: 105%;
+        font-weight: bold;
+    }
+    .card-text {
+        font-size: 90%;
+    }
+    .qty {
+        width: 15%;
+        height: 15%;
+    }
+    input.qtyplus,
+    input.qtyminus {
+        width: 15%;
+    }
+    #myform {
+
+        padding: 0.5%;
+        margin-bottom: 3%;
+        margin-left: 1%;
+        font-size: 80%;
+    }
+    .bt {
+        font-size: 80%;
+    }
+    .sort {
+        margin: 25%;
+        margin-bottom: 1%;
+        margin-top: 1%;
+    }
+    .for {
+        width: 70%;
+        margin-left: 15%;
+    }
+    .details {
+        font-size: 125%;
+    }
+    .tad {
+        font-size: 95%;
+    }
+    .bton {
+        margin-bottom: 1.5% !important;
+    }
+    .car {
+        font-size: 110% !important;
+        text-align: center;
+        margin-left: 4%;
+    }
+    #cname {
+        text-align: center;
+        margin-left: 4%;
+    }
+    .imgc {
+        max-width: 80% !important;
+        height: auto;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 0.2%;
+    }
+    #qty {
+        width: 50%;
+    }
+    .col-xs-12 {
+		width: auto;
+	}
+}
+@media screen and (min-width: 400px) and (max-width: 770px) {
+	.card-list {
+    	margin-left: 20%;
+    	margin-right: 10%
+    }
+}
+@media screen and (min-width: 400px) and (max-width: 750px) {
+	.imgc {
+        width: 50%;
+        height: auto;
+        margin-left: 25%;
+        margin-right: 25%;
+        margin-bottom: 0.2%;
+    }
+    /*.card-list {
+    	margin-left: 25%;
+    	margin-right: 30%
+    }*/
+}
+@media screen and (min-width: 750px) and (max-width: 990px) {
+    .lft {
+        margin-left: 15% !important;
+    }
+    .details {
+        font-size: 140%;
+        font-family: fantasy;
+    }
+    .tad {
+        font-family: fantasy;
+        font-size: 115%;
+    }
+    .imgc {
+        max-width: 100% !important;
+        height: auto;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 0.2%;
+    }
+    #ord {
+		font-size: 180%; 
+	}
+	#memo {
+		font-size: 125%;
+	}
+}

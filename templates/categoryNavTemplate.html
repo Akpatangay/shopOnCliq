@@ -1,0 +1,13 @@
+<div class="container-fluid" style="margin-top: 0">
+    <nav class="navbar navbar-default">
+        <ul class="nav navbar-nav navb" ng-repeat="cat in category.data">
+            <li><a ng-href="#!/category/{{cat}}" class="btn btn-default" role="button"><b>{{cat | uppercase}}
+            </b></a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navb">
+            <li><a ng-href="#!/" role="button" class="btn btn-default"><b>ALL PRODUCTS</b></a>
+            </li>
+        </ul>
+    </nav>
+</div>

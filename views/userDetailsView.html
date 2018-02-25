@@ -1,0 +1,79 @@
+<login-directive></login-directive>
+<main-nav ng-if="loggedIn"></main-nav>
+<div class="container" ng-if="loggedIn">
+    <p class="details"><u>YOUR DETAILS</u></p>
+    <!-- {{user.allDetails}} -->
+    <div class="jumbotron jum">
+        <div class="table-responsive">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td class="tad"><b style="color: rgb(245, 67, 136)">Name:</b></td>
+                        <td class="tad">{{user.allDetails.firstName | capitalize}} {{user.allDetails.lastName | capitalize}}</td>
+                    </tr>
+                    <tr>
+                        <td class="tad"><b style="color: rgb(245, 67, 136)">Email:</b></td>
+                        <td class="tad">{{user.allDetails.email}}</td>
+                    </tr>
+                    <tr>
+                        <td class="tad"><b style="color: rgb(245, 67, 136)">Contact Number:</b> </td>
+                        <td class="tad">{{user.allDetails.mobileNumber}}</td>
+                    </tr>
+                    <tr>
+                        <td class="tad"><b style="color: rgb(245, 67, 136)">Address:</b></td>
+                        <td class="tad"> {{user.allDetails.address | capitalize}}</td>
+                    </tr>
+                    <tr>
+                        <td class="tad"><b style="color: rgb(245, 67, 136)">Account Created On:</b></td>
+                        <td class="tad"> {{user.allDetails.accountCreated | date : 'medium'}}</td>
+                    </tr>
+                    <tr>
+                        <td class="tad"><b style="color: rgb(245, 67, 136)">Last Login:</b> </td>
+                        <td class="tad">{{user.allDetails.lastLogin | date : 'medium'}}</td>
+                    </tr>
+                    <tr>
+                        <td class="tad"><b style="color: rgb(245, 67, 136)">Order History:</b> </td>
+                        <td class="tad">Number of past orders: {{user.allDetails.orderHistory.length}}</td>
+                    </tr>
+                    <tr>
+                        <td class="tad"><b style="color: rgb(245, 67, 136)">Customer ID:</b></td>
+                        <td class="tad"> {{user.allDetails.customerId}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <div class="col-xs-12 col-sm-8 col-md-6">
+            	<input type="button" style="width: 100%; margin-left: 0 !important" class="btn btn-default sub" data-toggle="modal" data-target="#change" value="Change Password"/>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-6">
+                <a type="button" style="width: 100%; margin-right: 0" class="btn btn-default sub button"  href="#!/">Back</a>
+            </div>
+        </div>
+        <br/><br/>
+    </div>
+</div>
+<!-- modal to change password -->
+<div class="container">
+    <div class="modal fade" id="change" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <form style="width: 80%; margin: 10%;">
+                    <div class="form-group">
+                        <label for="oldPassword" style="font-family: fantasy">Old Password:</label>
+                        <input type="password" class="form-control" id="oldPassword" placeholder="Enter old password" name="oldPassword" required="" ng-model="user.oldPassword"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassword" style="font-family: fantasy">New Password:</label>
+                        <input type="password" class="form-control" id="newPassword" placeholder="Enter new password" name="newPassword" required="" ng-model="user.newPassword"/>
+                    </div>
+                    <button type="submit" ng-click="user.changePassword()" class="btn btn-default sub" data-dismiss="modal">Submit</button>
+                </form>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default sub" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>

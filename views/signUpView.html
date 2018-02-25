@@ -1,0 +1,86 @@
+<div class="container">
+    <p id="sign">shopOnCliq | Sign Up</p>
+    <form class="form-horizontal for" novalidate="" name="myForm" ng-submit="signUp.userSignUp()">
+        <p id="fill"><b>Please fill in this form to create an account.</b></p>
+        <hr/>
+        <br/>
+        <div class="form-group">
+            <div class="col-sm-6 col-md-6">
+                <label class="control-label lab" for="firstName">First Name *: </label>
+            </div>
+            <div class="col-sm-10 col-md-10">
+                <input type="text" class="form-control" id="firstName" placeholder="Enter First Name" required="" name="fname" ng-model="signUp.firstName" />
+                <span ng-show="myForm.$dirty && myForm.fname.$error.required">This is a required field</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-6 col-md-6">
+                <label class="control-label lab" for="lastName">Last Name: </label>
+            </div>
+            <div class="col-sm-10 col-md-10">
+                <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name" ng-model="signUp.lastName" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-6 col-md-6">
+                <label class="control-label lab" for="middleName">Middle Name: </label>
+            </div>
+            <div class="col-sm-10 col-md-10">
+                <input type="text" class="form-control" id="middleName" placeholder="Enter Middle Name" ng-model="signUp.middleName" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-6 col-md-6">
+                <label class="control-label lab" for="email">Email *: </label>
+            </div>
+            <div class="col-sm-10 col-md-10">
+                <input type="email" class="form-control" id="email" placeholder="Enter Email" required="" ng-model="signUp.email" name="email" />
+                <span ng-show="myForm.$dirty && myForm.email.$error.required">This is a required field</span>
+                <span ng-show="myForm.$dirty && myForm.email.$invalid">This field is invalid </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-6 col-md-6">
+                <label class="control-label lab" for="address">Address *: </label>
+            </div>
+            <div class="col-sm-10 col-md-10">
+                <input type="text" class="form-control" name="address" id="address" placeholder="Enter Address" required="" ng-model="signUp.address" />
+                <span ng-show="myForm.$dirty && myForm.address.$error.required">This is a required field</span>
+                <span ng-show="myForm.$dirty && myForm.address.$invalid">This field is invalid </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-6 col-md-6">
+                <label class="control-label lab" for="password">Password *: </label>
+            </div>
+            <div class="col-sm-10 col-md-10">
+                <input type="password" class="form-control" name="password" id="password" placeholder="Enter password" required="" ng-model="signUp.password" />
+                <span class="red-text" ng-show="myForm.password.$dirty && myForm.password.$error.required" class="help-block">Password is required</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-6 col-md-6">
+                <label class="control-label lab" for="mobileNumber">Mobile Number: </label>
+            </div>
+            <div class="col-sm-10 col-md-10">
+                <input type="text" class="form-control" name="mobileNumber" id="mobileNumber" placeholder="Enter Mobile Number" ng-model="signUp.mobileNumber" ng-pattern="/^[7-9][0-9]{9}$/" />
+                <span ng-show="myForm.mobileNumber.$error.pattern">Please enter valid 10 digit number!</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="control-label col-sm-10 col-md-10">
+                <button type="submit" id="sub" class="btn btn-default sub" ng-disabled="myForm.$invalid">Sign Up</button>
+            </div>
+        </div>
+        <div class="control-label col-sm-10 col-md-10">
+            <p>Already a member?
+                <a type="button" class="btn btn-default sub button" href="#!/loginForm">Sign In</a>
+            </p>
+        </div>
+        <br/>
+        <br/><hr/>
+        <div class="col-sm-12 col-md-12">
+            <a type="button" class="btn btn-default sub button" style="width: 80%;" href="#!/">Home</a>
+        </div>
+    </form>
+</div>

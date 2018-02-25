@@ -1,0 +1,48 @@
+<main-nav></main-nav>
+<category-nav-directive></category-nav-directive>
+<div class="container">
+    <div class="jumbotron row">
+        <div class="container">
+            <div class="col-xs-12 col-sm-12 col-md-4">
+                <select ng-model="order" class="sort">
+                    <option value=''>Sort By</option>
+                    <option value="productPrice">Price (low to high)</option>
+                    <option value="-productPrice">Price (high to low)</option>
+                    <option value="productName">Name A-Z</option>
+                    <option value="-productName">Name Z-A</option>
+                </select>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-8">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for products, brands and more..       " name="search" ng-model="prod.search" />
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <br/><hr/>
+        <div class="card-list col-xs-12" style="padding-top: 25px; ">
+            <div class="row">
+                <div class="list-group col-xs-12 col-sm-6 col-md-4" ng-repeat="prod in main.entireData | orderBy: order | filter: prod.search">
+                    <div class="card">
+                        <img class="card-img-top list-group-item" src="{{prod.productImage}}" alt="Card image" style="width:100%">
+                        <div class="card-body list-group-item" style="min-height:300px;">
+                            <h4 class="card-title" style="text-align: center !important;">{{prod.productName}}</h4>
+                            <p class="card-text">{{prod.productCategory}}</p>
+                            <p class="card-text"><b>{{prod.productPrice | currency:"&#8377;"}}</b></p>
+                            <a class="card-text" ng-click="main.ShowHide($index)"><b>Details</b></a>
+                            <div class="card-text jumbotron" ng-show="main.IsVisible[$index]" style="margin: 0.2%; padding: 0.5%">{{prod.productDescription}}</div>
+                            <form id='myform'> Qty:
+                                <input type='button' value='-' class='qtyminus' field='quantity' ng-click="main.decrement(prod.productId) " style="margin-right: 0" />
+                                <input type='text' name='quantity' ng-model="prod.quantity" class='qty' />
+                                <input type='button' value='+' class='qtyplus' field='quantity' ng-click="main.increment(prod.productId)" />
+                            </form>
+                            <a ng-click="main.addItemToCart(prod.productId, prod.quantity)" class="btn btn-primary btn-sm btn-md bton">Add to cart</a><a ng-click="main.placeOrder(prod.productId, prod.quantity)" class="btn btn-primary btn-sm btn-md">Buy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

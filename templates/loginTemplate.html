@@ -1,0 +1,11 @@
+<!-- login template to send an alert whenever user logs out -->
+<div class="container" ng-if="!$root.loggedIn">
+    <div class="row" style="margin-top: 20%;">
+        <div class="jumbotron" style="text-align: center;">
+        	<p>You must login to view this page!</p>
+        	<div>
+        		<a ng-href="#!/"><input type="button" value="HOME" class="btn btn-default sub"/></a>
+        	</div>
+        </div>
+    </div>
+</div>
